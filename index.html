@@ -3,65 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>በገና-ቃና | Begena Qana</title>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        (function(){ emailjs.init("YOUR_PUBLIC_KEY"); })();
-    </script>
+    <title>በገና-ቃና መማሪያ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; background: #fdfaf1; color: #4e342e; text-align: center; margin: 0; padding: 0; }
-        nav { background: #4e342e; padding: 15px; border-bottom: 3px solid #d4af37; }
-        .logo { color: #d4af37; font-size: 1.5rem; font-weight: bold; }
-        .container { padding: 40px 20px; }
-        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; }
-        .btn { background: #d4af37; color: #4e342e; padding: 15px; border: none; width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer; }
-        #thanks { display: none; padding: 40px; }
+        :root { --wood: #4e342e; --gold: #d4af37; --bg: #fdfaf1; }
+        body { font-family: 'Noto Sans Ethiopic', sans-serif; background: var(--bg); margin: 0; color: var(--wood); line-height: 1.6; }
+        nav { background: var(--wood); padding: 15px; border-bottom: 3px solid var(--gold); text-align: center; position: sticky; top:0; }
+        .logo { color: var(--gold); font-size: 1.4rem; font-weight: bold; }
+        header { background: #1a0a05; color: white; padding: 50px 20px; text-align: center; }
+        h1 { color: var(--gold); margin: 0; font-size: 1.8rem; }
+        .container { padding: 20px; max-width: 800px; margin: auto; }
+        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 20px; border-bottom: 4px solid var(--gold); }
+        h2 { color: var(--wood); border-left: 4px solid var(--gold); padding-left: 10px; font-size: 1.2rem; }
+        footer { background: var(--wood); color: var(--gold); text-align: center; padding: 20px; font-size: 0.8rem; }
     </style>
 </head>
 <body>
-    <nav><div class="logo">በገና-ቃና</div></nav>
-    <header style="background:#1a0a05; color:white; padding: 50px 20px;">
-        <h1>እንኳን ወደ በገና-ቃና በደህና መጡ</h1>
-        <p>በስልክዎ የምዝገባ ፎርሙን ይሙሉ።</p>
+    <nav><div class="logo">በገና-ቃና (Begena Qana)</div></nav>
+    <header>
+        <h1>የበገና መማሪያ ማዕከል</h1>
+        <p>የጥንቱን ጥበብ በዘመናዊ መንገድ</p>
     </header>
     <div class="container">
-        <div class="card" id="form-box">
-            <h2>የተማሪዎች ምዝገባ</h2>
-            <form id="regForm">
-                <input type="text" id="name" placeholder="ሙሉ ስም" required>
-                <input type="tel" id="phone" placeholder="ስልክ ቁጥር" required>
-                <input type="email" id="email" placeholder="ኢሜይል" required>
-                <select id="type">
-                    <option value="ባለ 7">ባለ 7 አውታር</option>
-                    <option value="ባለ 10">ባለ 10 አውታር</option>
-                </select>
-                <button type="submit" class="btn" id="subBtn">ይመዝግቡኝ</button>
-            </form>
+        <div class="card">
+            <h2>፩. የበገና ታሪክ</h2>
+            <p>በገና የኢትዮጵያ ጥንታዊና መንፈሳዊ መሣሪያ ነው። በታሪክ የንጉሥ ዳዊት መሣሪያ እንደሆነና በአክሱም ዘመን በቅዱስ ያሬድ አማካኝነት ለመንፈሳዊ አገልግሎት እንደዋለ ይታወቃል።</p>
         </div>
-        <div id="thanks">
-            <h2 style="color: green;">✔ ተሳክቷል!</h2>
-            <p id="msg"></p>
-            <button class="btn" onclick="location.reload()">ተመለስ</button>
+        <div class="card">
+            <h2>፪. የበገና ዓይነቶች</h2>
+            <p><strong>ባለ ፯ አውታር፡</strong> ሰባቱን ምስጢራተ ቤተክርስቲያን ይወክላል።</p>
+            <p><strong>ባለ ፲ አውታር፡</strong> አሥርቱን ትዕዛዛተ ኦሪት ይወክላል። የዳዊት በገና ይባላል።</p>
+        </div>
+        <div class="card">
+            <h2>፫. ክፍሎችና ምሳሌነት</h2>
+            <ul>
+                <li><strong>ምሶሶዎች፡</strong> የነቢያትና የሐዋርያት ምሳሌ።</li>
+                <li><strong>ቆዳው፡</strong> የጌታችን መከራ ምሳሌ።</li>
+                <li><strong>ጅማት፡</strong> የጌታችን ግርፋት ምሳሌ።</li>
+            </ul>
         </div>
     </div>
-    <script>
-        document.getElementById('regForm').onsubmit = function(e) {
-            e.preventDefault();
-            const btn = document.getElementById('subBtn');
-            btn.innerText = "በመላክ ላይ...";
-            const data = {
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                type: document.getElementById('type').value
-            };
-            emailjs.send("service_abc123", "template_i19oqrj", data)
-            .then(() => {
-                document.getElementById('form-box').style.display = 'none';
-                document.getElementById('thanks').style.display = 'block';
-                document.getElementById('msg').innerText = "ክቡር " + data.name + "፣ ምዝገባዎ ተቀባይነት አግኝቷል።";
-        };
-    </script>
+    <footer>&copy; 2025 በገና-ቃና | የጥበብ ማዕከል</footer>
 </body>
 </html>
