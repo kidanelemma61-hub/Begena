@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>በገና-ቃና | Begena Qana</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){ emailjs.init("YOUR_PUBLIC_KEY"); })();
+    </script>
+    <style>
+        body { font-family: sans-serif; background: #fdfaf1; color: #4e342e; text-align: center; margin: 0; padding: 0; }
+        nav { background: #4e342e; padding: 15px; border-bottom: 3px solid #d4af37; }
+        .logo { color: #d4af37; font-size: 1.5rem; font-weight: bold; }
+        .container { padding: 40px 20px; }
+        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; }
+        .btn { background: #d4af37; color: #4e342e; padding: 15px; border: none; width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        #thanks { display: none; padding: 40px; }
+    </style>
+</head>
+<body>
+    <nav><div class="logo">በገና-ቃና</div></nav>
+    <header style="background:#1a0a05; color:white; padding: 50px 20px;">
+        <h1>እንኳን ወደ በገና-ቃና በደህና መጡ</h1>
+        <p>በስልክዎ የምዝገባ ፎርሙን ይሙሉ።</p>
+    </header>
+    <div class="container">
+        <div class="card" id="form-box">
+            <h2>የተማሪዎች ምዝገባ</h2>
+            <form id="regForm">
+                <input type="text" id="name" placeholder="ሙሉ ስም" required>
+                <input type="tel" id="phone" placeholder="ስልክ ቁጥር" required>
+                <input type="email" id="email" placeholder="ኢሜይል" required>
+                <select id="type">
+                    <option value="ባለ 7">ባለ 7 አውታር</option>
+                    <option value="ባለ 10">ባለ 10 አውታር</option>
+                </select>
+                <button type="submit" class="btn" id="subBtn">ይመዝግቡኝ</button>
+            </form>
+        </div>
+        <div id="thanks">
+            <h2 style="color: green;">✔ ተሳክቷል!</h2>
+            <p id="msg"></p>
+            <button class="btn" onclick="location.reload()">ተመለስ</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('regForm').onsubmit = function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('subBtn');
+            btn.innerText = "በመላክ ላይ...";
+            const data = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                type: document.getElementById('type').value
+            };
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", data)
+            .then(() => {
+                document.getElementById('form-box').style.display = 'none';
+                document.getElementById('thanks').style.display = 'block';
+                document.getElementById('msg').innerText = "ክቡር " + data.name + "፣ ምዝገባዎ ተቀባይነት አግኝቷል።";
+            }, (err) => { alert("ስህተት ተፈጥሯል። ኢንተርኔትዎን ይፈትሹ።"); btn.innerText = "Register"; });
+        };
+    </script>
+</body>
+</html>
